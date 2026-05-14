@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import {
   Collapsible,
   CollapsibleContent,
@@ -13,6 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 import { templates } from "@/utils/templates";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import Link from "next/link";
@@ -79,7 +79,6 @@ function MobileMenu() {
 
         {/* ── Items ────────────────────────────────────── */}
         <nav className="flex flex-1 flex-col px-9 pt-10">
-
           {/* Playground */}
           <MenuItem
             label="Playground"
@@ -89,12 +88,7 @@ function MobileMenu() {
           />
 
           {/* Export */}
-          <MenuItem
-            label="Export"
-            href="/"
-            index="02"
-            isActive={false}
-          />
+          <MenuItem label="Export" href="/" index="02" isActive={false} />
 
           {/* Templates — collapsible */}
           <Collapsible defaultOpen={isOnTemplate}>
@@ -140,10 +134,7 @@ function MobileMenu() {
                       className="flex items-center justify-between py-3"
                     >
                       <SheetClose asChild>
-                        <Link
-                          href={t.url}
-                          className="flex items-start gap-1"
-                        >
+                        <Link href={t.url} className="flex items-start gap-1">
                           <span
                             className={cn(
                               "text-[22px] font-medium leading-[1.1] tracking-[-0.01em] transition-colors",
